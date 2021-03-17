@@ -32,8 +32,7 @@ public class Values_06 {
 		// 비교 ? true :false와 같이 항목 3가지가 구분되어 있는 연산
 		System.out.println(3 == 3 ?"맞다" : "아니다");
 		System.out.println(3 == 3
-							? "맞다" 
-							: "아니다");
+							? "맞다" : "아니다");
 			
 	}
 
