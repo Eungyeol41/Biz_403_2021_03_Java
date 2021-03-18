@@ -25,7 +25,6 @@ public class Varriable_06 {
 		Double num6 = 30.0;
 		
 		
-		
 	}
 
 }
