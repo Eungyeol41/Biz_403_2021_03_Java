@@ -61,7 +61,7 @@ public class Varriable_10 {
 		intSum = 0;
 		
 		
-		//처음에 만들어진 intNum값(1)을 intSum 변수에 누적하고 다음 올 코드를 위하여 ..1을 더한다..?
+		//처음에 만들어진 intNum값(1)을 intSum 변수에 누적하고 다음 올 코드를 위하여 intNum에 1을 증가시켜라
 		intSum += intNum++; // 0 + 1
 		intSum += intNum++; // 1 + 2
 		intSum += intNum++; // 3 + 3
