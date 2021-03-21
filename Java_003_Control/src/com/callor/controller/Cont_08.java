@@ -13,11 +13,11 @@ public class Cont_08 {
 		 */
 		int intNum = 100;
 		for(int i = 2; i < intNum ; i++) {
-			boolean bYes = intNum % 1 == 0;
+			boolean bYes = intNum % i == 0;
 			if(bYes) {
 				// 만약 반복문이 진행(수행)되는 동안에 나머지가 0인 경우가 나타나면
 				// 그 수는 소수가 아니므로 "소수가 아님" 메시지를 보여주고 for() 반복문을 중단(break)하라
-				System.out.println(intNum + "는 소수가 아니다 : " + i);
+				System.out.println(intNum + "은 소수가 아니다");
 				break;
 			}
 		}
