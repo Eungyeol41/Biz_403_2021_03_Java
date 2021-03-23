@@ -2,6 +2,14 @@ package com.callor.apps;
 
 import java.util.Random;
 
+/*
+ * 5학급의 학생들에게 피자 간식을 지급 하려고 합니다.
+ * 학급의 인원은 50 ~ 59명입니다
+ * 학급 인원은 Random 클래스를 이용하여 생성합니다
+ * 피자는 1box에 6조각입니다
+ * 다음과 같이 주문 리스트를 출력합니다.
+ */
+
 public class App_04A {
 
 	public static void main(String[] args) {
