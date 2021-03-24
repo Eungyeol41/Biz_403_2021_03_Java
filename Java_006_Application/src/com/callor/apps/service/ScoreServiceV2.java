@@ -20,11 +20,13 @@ public class ScoreServiceV2 {
 		
 		// Random 클래스를 사용하여 rnd 인스턴스(변수) 생성
 		rnd = new Random();
+		
 		intKor = new int[10];
 		intEng = new int[intKor.length];
 		intMath = new int[intKor.length];
 	}
-	// Random 클래스를 사용하여 생성된 rnd 인스턴스변수의 
+	
+	// Random 클래스를 사용하여 점수 생성 후 배열에 저장하는 method
 	public void makeScore() {
 		for(int i = 0; i < intKor.length; i++) {
 			intKor[i] = rnd.nextInt(100) + 1;
@@ -32,16 +34,15 @@ public class ScoreServiceV2 {
 			intMath[i] = rnd.nextInt(100) + 1;
 		}
 	}
-	// 정수배열에 담긴 값들을 사용하여 성적리스트 출력하기
+	
+	// 점수배열에 담긴 값들을 사용하여 성적리스트 출력하기
 	public void printScore() {
-		
 		System.out.println("===========================");
 		System.out.printf("국어\t영어\t수학");
 		System.out.println("---------------------------");
-		System.out.println();
+		for(int i = 0; i < intKor.length; i++) {
+			System.out.printf("%3d\t%3d\t%3d\n", intKor[i], intEng[i], intMath[i]);
+		}
+		System.out.println("===========================");
 	}
-	
-	
-	
-	
 }

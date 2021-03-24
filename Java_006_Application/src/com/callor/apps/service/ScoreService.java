@@ -19,6 +19,7 @@ public class ScoreService {
 	
 	// 임의로 makeScore라는 이름으로 선언한 메서드
 	// makeScore() method(메서드)
+	// 클래스 영역에 선언된 배열과 변수를 초기화
 	public void makeScore() {
 	
 		
