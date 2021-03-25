@@ -5,7 +5,7 @@ import com.callor.apps.service.PrimeServiceV1;
 public class App_03 {
 
 	public static void main(String[] args) {
-		
+
 		PrimeServiceV1 psV1 = new PrimeServiceV1();
 		PrimeServiceV1 psVA = new PrimeServiceV1();
 		PrimeServiceV1 psVB = new PrimeServiceV1();
