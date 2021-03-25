@@ -1,4 +1,4 @@
-package com.callor.apps.service.EvenServiceV1;
+package com.callor.apps.service;
 
 /*
  * 자바프로그래밍에서 상속
@@ -19,7 +19,7 @@ public class EvenServiceV2 extends EvenServiceV1{
 		int nCount = 0;
 		for (int i = 0; i < 100; i++) {
 			if (intNum[i] % 2 == 0) {
-				System.out.printf("%5d", intNum[i]);
+				System.out.printf("%4d", intNum[i]);
 				nCount++;
 				if(nCount % 5 == 0) {
 					System.out.println();
@@ -28,16 +28,4 @@ public class EvenServiceV2 extends EvenServiceV1{
 		}
 		System.out.println();
 	}
-	
-	public void sumEven() {
-		int intSum = 0;
-		for(int i = 0; i < intNum.length; i++) {
-			if(intNum[i] % 2 == 0) {
-				intSum += intNum[i];
-			}
-		}
-		System.out.println("====================");
-		System.out.println("총합 : " + intSum);
-		System.out.println("====================");
-	}
-}
+}	

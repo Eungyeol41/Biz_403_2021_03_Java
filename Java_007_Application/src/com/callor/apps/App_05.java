@@ -1,6 +1,6 @@
-package com.callor.apps.service.EvenServiceV1;
+package com.callor.apps;
 
-import java.util.Random;
+import com.callor.apps.service.EvenServiceV1;
 
 public class App_05 {
 
@@ -16,3 +16,4 @@ public class App_05 {
 	
 	
 }
+

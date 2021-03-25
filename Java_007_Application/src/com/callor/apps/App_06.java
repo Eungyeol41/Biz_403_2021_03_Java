@@ -1,6 +1,6 @@
 package com.callor.apps;
 
-import com.callor.apps.service.EvenServiceV1.EvenServiceV2;
+import com.callor.apps.service.EvenServiceV2;
 
 public class App_06 {
 

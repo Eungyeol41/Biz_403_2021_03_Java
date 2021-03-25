@@ -1,4 +1,4 @@
-package com.callor.apps.service.EvenServiceV1;
+package com.callor.apps.service;
 
 import java.util.Random;
 
@@ -9,9 +9,9 @@ public class EvenServiceV1 {
 	int[] intNum; // 여기서는 선언만 하고
 	
 	// 생성자 method
-	// 클래스를 선언하면 자동으로 만들어지는 method
-	// 별도의 코드가 필요없으면 만들지 않아도 된다.
-	// new EvenServiceV1() 코드에서 호출되는 method
+	// 		클래스를 선언하면 자동으로 만들어지는 method
+	// 		별도의 코드가 필요없으면 만들지 않아도 된다.
+	//		 new EvenServiceV1() 코드에서 호출되는 method
 	// 생성자 method에는 클래스영역의 변수들을 초기화 생성하기 위한 코드들이 작성된다
 	public EvenServiceV1() {
 		intNum = new int[100]; // 생성은 생성자에서
@@ -44,8 +44,12 @@ public class EvenServiceV1 {
 		for (int i = 0; i < 100; i++) {
 			if (intNum[i] % 2 == 0) {
 				System.out.println(intNum[i]);
+				nCount++;
 			}
 		}
+		System.out.println("-------------------------");
+		System.out.println("짝수들의 개수 : " + nCount);
+		System.out.println("=========================");
 	}
 	
 	public void sumEven() {
