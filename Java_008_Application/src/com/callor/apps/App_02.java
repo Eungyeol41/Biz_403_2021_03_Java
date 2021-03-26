@@ -9,7 +9,7 @@ public class App_02 {
 		ScoreServiceV1 ssV1 = new ScoreServiceV1();
 		
 		ssV1.makeNums();
-		ssV1.printEven();
-		ssV1.sumPrint();
+		ssV1.printHeader();
+		ssV1.printList();
 	}
 }
