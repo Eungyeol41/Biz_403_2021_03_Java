@@ -5,6 +5,17 @@ import java.util.Scanner;
 public class ScoreServiceV5 {
 
 	String[] subject;
+
+	/*
+	 *  3과목의 점수를 저장할 배열을 10개 만들었다고 가정하자
+	 *  
+	 *  8번 요소의 배열에 각각 점수를 저장하자
+	 *  
+	 *  intKor[8] = 90;
+	 *  intEng[8] = 70;
+	 *  intMath[8] = 66;
+	 *  
+	 */
 	int[] intKor;
 	int[] intEng;
 	int[] intMath;
@@ -19,10 +30,6 @@ public class ScoreServiceV5 {
 		intMath = new int[members];
 		
 	}
-	/*
-	 * 점수를 입력받을 과목명을 배열로 만들어 두고 과목명 문자열을 inputScore()에 전달하여
-	 * 3과목의 점수를 입력받는 코드를 작성
-	 */
 	
 	/*
 	 * 현재는 학생 수만큼 모든 과목의 점수 입력을 끝내야만 다른 업무로 진행이 된다.

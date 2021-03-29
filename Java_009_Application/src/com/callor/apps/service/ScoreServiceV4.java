@@ -29,6 +29,7 @@ public class ScoreServiceV4 {
 			intKor[i] = this.inputScore(subject[0]);
 			intEng[i] = this.inputScore(subject[1]);
 			intMath[i] = this.inputScore(subject[2]);
+			System.out.println("--------------------------------");
 		}
 	}
 	

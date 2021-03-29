@@ -18,7 +18,7 @@ public class ScoreServiceV1A {
 	int[] intMath;
 	
 	// Service 클래스에서 배열의 개수를 고정하지 말고 최초로 객체를 생성할 때 필요한 개수를 매개변수로 전달하고
-	// 전달받은 매개변수(members)의 값을 사용하여 값을 만들자
+	// 전달받은 매개변수(members)의 값을 사용하여 배열을 만들자
 	public ScoreServiceV1A(int members) {
 		// scan 객체를 생성(초기화)하기
 		// 객체를 선언하고 생성하는 코드가 없으면 사용하는 과정에서 NullpointerException이 발생한다
