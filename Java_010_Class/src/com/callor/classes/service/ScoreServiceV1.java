@@ -78,7 +78,6 @@ public class ScoreServiceV1 {
 		int intEng = scan.nextInt();
 
 		System.out.println(strNum + " 번의 수학점수를 입력하세요");
-		System.out.println(" >> ");
 		int intMath = scan.nextInt();
 
 		ScoreVO scoreVO = new ScoreVO();
@@ -111,7 +110,7 @@ public class ScoreServiceV1 {
 	private void printHeader() {
 
 		System.out.println("* 빛나라 고교 성적처리 V1");
-		System.out.println(Lines.dLine(50));
+		System.out.println(Lines.dLine11(50));
 		System.out.println("학번\t국어\t영어\t수학\t총점\t평균\t석차\n");
 		System.out.println(Lines.sLine(50));
 
