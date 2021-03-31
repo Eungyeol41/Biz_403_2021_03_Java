@@ -13,7 +13,7 @@ public class ScannerEx_04 {
 		
 		System.out.print("숫자 1 >> ");
 		String strNum = scan.nextLine();
-		if(strNum == "QUIT") {
+		if(strNum.equals("QUIT")) {
 			return;
 		}
 		
