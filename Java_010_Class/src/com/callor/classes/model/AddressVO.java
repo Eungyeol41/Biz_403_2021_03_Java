@@ -12,7 +12,7 @@ public class AddressVO {
 	 * 
 	 * age 변수에 값을 저장하려면 반드시 setAge(setter() method)를 통해서 값을 저장해야 한다
 	 * 
-	 * setAge() method는 매개변수로 받는 나이를 유효성겁사를 수행한 다음 유효한 범위에 있지 않으면
+	 * setAge() method는 매개변수로 받는 나이를 유효성검사를 수행한 다음 유효한 범위에 있지 않으면
 	 *  null값을 저장하여 이후 값을 조회했을 때 잘못된 값이 저장되었다는 것을 암시적으로 표현하도록 했다
 	 *  	(null을 저장하였다)
 	 */
@@ -42,5 +42,8 @@ public class AddressVO {
 	}
 	public String getAddr() {
 		return this.addr;
+	}
+	public String getTel() {
+		return this.tel;
 	}
 }
