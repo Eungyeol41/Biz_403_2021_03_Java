@@ -6,14 +6,15 @@ public class IolistServiceV4 extends IolistServiceV1 {
 
 	@Override
 	public void input() {
-		// TODO
-
+		// TODO Auto-generated method stub
 		System.out.println("=".repeat(70));
 		System.out.println("매입 매출 등록");
 		System.out.println("-".repeat(70));
+		
+		String pname = null;
 		while (true) {
 			System.out.print("상품명(QUIT : 입력중단)  >> ");
-			String pname = scan.nextLine();
+			pname = scan.nextLine();
 			if (pname == "QUIT") {
 				return;
 			} else if(pname.equals("")) {
@@ -45,7 +46,7 @@ public class IolistServiceV4 extends IolistServiceV1 {
 		}
 
 		IolistVO vo = new IolistVO();
-//		vo.setPname(pname);
+		vo.setPname(pname);
 		vo.setDate(date);
 		vo.setDname(dname);
 		vo.setQty(qty);
