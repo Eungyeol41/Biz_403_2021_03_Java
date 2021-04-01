@@ -15,12 +15,8 @@ public class PrimeServiceV5 extends PrimeServiceV4A{
 			}
 			// index < rndNum 와 반대, index >= rndNum 		 index == rndNum
 			if(index < rndNum) {
-				
-			} else {
 				primeList.add(rndNum);
-			}
+			} 
 		}
 	}
-
-	
 }

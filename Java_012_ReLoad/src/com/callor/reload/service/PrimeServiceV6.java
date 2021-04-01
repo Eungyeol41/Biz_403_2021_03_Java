@@ -16,13 +16,12 @@ public class PrimeServiceV6 {
 	}
 	
 	public void primeNum() {
-		
 		for(int i = 0; i < 50; i++) {
 			int rndNum = rnd.nextInt(51) + 50;
-			if(this.isPrime(rndNum)) {
-				primeList.add(rndNum);
-			}
-			
+			// if(this.isPrime(rndNum)) {
+			//		primeList.add(rndNum);
+			// }
+			this.addPrime(rndNum);
 		}
 	}
 	

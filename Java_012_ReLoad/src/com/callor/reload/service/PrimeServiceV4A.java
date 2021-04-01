@@ -7,9 +7,9 @@ import java.util.Random;
 public class PrimeServiceV4A {
 
 	protected Random rnd;
-	List<Integer> primeList;
-	
+	protected List<Integer> primeList;
 	public PrimeServiceV4A() {
+		rnd = new Random();
 		primeList = new ArrayList<Integer>();
 	}
 	
