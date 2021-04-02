@@ -51,7 +51,6 @@ public class InputServiceV5 {
 		
 		System.out.print("두 정수의 차 : ");
 		System.out.printf("%d - %d = %d", vo.getNum1(), vo.getNum2(), vo.getNum1() - vo.getNum2());
-		
 	}
 	
 	public void printNum() {
