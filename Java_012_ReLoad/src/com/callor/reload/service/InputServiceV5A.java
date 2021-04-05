@@ -28,7 +28,6 @@ public class InputServiceV5A {
 		try {
 			intNum1 = Integer.valueOf(strNum1);
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("숫자로만 입력");
 			//continue;
 		}
@@ -40,7 +39,6 @@ public class InputServiceV5A {
 		try {
 			intNum2 = Integer.valueOf(strNum2);
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("숫자로만 입력");
 			//continue;
 		}

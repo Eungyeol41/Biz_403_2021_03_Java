@@ -32,7 +32,7 @@ public class InputServiceV3 {
 				intList.add(intNum);
 				break;
 			} else {
-				System.out.println("정수는 50 ~ 100 범위에서 입력!");
+				System.out.println("정수는 50 ~ 150 범위에서 입력!");
 			}
 		}
 	}
