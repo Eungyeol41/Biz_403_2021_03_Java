@@ -41,7 +41,7 @@ public class InputServiceV1 {
 				System.out.printf("입력값은 %d ~ %d" + "범위여야 합니다\n", start, end);
 				continue;
 			} // end if-else if
-			return null;
+			return retNum;
 		} // end while
 
 	}// end inputValue
