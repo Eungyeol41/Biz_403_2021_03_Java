@@ -22,14 +22,14 @@ public class NumberServiceV5A {
 				} catch (NumberFormatException e) {
 					System.out.println("정수 또는 QUIT만 입력하세요");
 					continue;
-				}
+				}// end try-catch
 
-			}
+			}// end if-else
 			if (intInput < 0 ) {
 				System.out.println("입력값 범위 초과");
 				continue;
-			}
+			}// end if
 			return intInput;
-		}
+		}// end while
 	}
 }
