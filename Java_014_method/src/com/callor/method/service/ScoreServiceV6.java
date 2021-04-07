@@ -18,7 +18,7 @@ public class ScoreServiceV6 {
 
 	public void inputScore() {
 
-		subject = new String[] { "국어", "수학", "영어" };
+		subject = new String[] { "국어", "영어", "수학" };
 		for (int st = 0; st < 5; st++) {
 			Integer[] scores = new Integer[subject.length];
 			
