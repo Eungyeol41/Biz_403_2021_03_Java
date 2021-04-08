@@ -86,7 +86,10 @@ public class ScoreVO extends Object {
 
 	// 재정의
 	// 상속받을 클래스에 있는 method를 내 마음대로 다시 만들어 사용하기
-	// 		...
+	
+	// 재활용
+	// toString() method는 Object 클래스로부터 상속받은 모든 클래스로 만든 객체에서 호출할 수 있다
+	// VO 클래스에서는 VO의 변수들에 담긴 값을 확인하는 용도로 재정의하여 활용한다
 	/*
 	@Override
 	public String toString() {
