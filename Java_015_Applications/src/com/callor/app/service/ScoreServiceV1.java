@@ -20,3 +20,4 @@ public class ScoreServiceV1 {
 		System.out.println("평균 : " + avg);
 	}
 }
+
