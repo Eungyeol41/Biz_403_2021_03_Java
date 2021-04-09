@@ -13,7 +13,6 @@ public class ScoreServiceImplV3 extends ScoreServiceImplV2A{
 
 	@Override
 	public void selectMenu() {
-		String strM = null;
 		
 		while(true) {
 			System.out.println("빛나라 고교 성적처리 V3");
@@ -22,20 +21,34 @@ public class ScoreServiceImplV3 extends ScoreServiceImplV2A{
 			System.out.println("2. 성적 리스트 출력");
 			System.out.println("3. 성적 파일에 저장");
 			System.out.println("QUIT. 업무 종료");
-			strM = scan.nextLine();
+			String strM = scan.nextLine();
 			if(strM.equals("QUIT")) {
 				break;
 			}
 			
-		} // end while
-		Integer intM = null;
-		try {
-			intM = Integer.valueOf(strM);
-		} catch (NumberFormatException e) {
-			System.out.println("메뉴는 0 ~ 2까지 선택, 종료 : QUIT");
-//			continue;
+			Integer intM = null;
+			
+			try {
+				intM = Integer.valueOf(strM);
+			} catch (NumberFormatException e) {
+				System.out.println("메뉴는 0 ~ 2까지만 선택, 종료:QUIT");
+				continue;
+			}
+			if(intM == 1) {
+				this.inputScore();
+			} else if(intM == 2) {
+				this.printScore();
+			} else if(intM == 3) {
+				// 파일에 저장
+				this.scoreToFile();
+			}
 		}
-		System.out.println();
+		System.out.println("업무 종료 편한 휴일 보내세요");
+	}
+	
+	// 입력된 성적리스트를 파일에 저장하기
+	protected void scoreToFile() {
+		
 	}
 	
 	
