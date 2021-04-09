@@ -1,4 +1,4 @@
-package com.callor.app.service;
+package com.callor.app.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.Eungyeol41.standard.InputService;
 import com.Eungyeol41.standard.impl.InputServiceImplV1;
 import com.callor.app.model.ScoreVO;
+import com.callor.app.service.ScoreService;
 
 public class ScoreServiceImplV1 implements ScoreService {
 
@@ -39,8 +40,8 @@ public class ScoreServiceImplV1 implements ScoreService {
 			System.out.println("업무 선택");
 			System.out.print(" >> ");
 			String strMenu = scan.nextLine();
-			
-			if(strMenu.equals("QUIT")) {
+
+			if (strMenu.equals("QUIT")) {
 				break;
 			}
 
@@ -52,17 +53,17 @@ public class ScoreServiceImplV1 implements ScoreService {
 				System.out.println("메뉴는 1, 2, QUIT만 입력 가능합니다");
 				continue;
 			} // end try-catch
-			
+
 			if (num == 1) {
 				this.inputScore();
 			} else if (num == 2) {
 				this.printScore();
-			} else if (num == 0) {
-				System.out.println("업무 종료");
-				return;
+			} else {
+				System.out.println("메뉴 선택 오류!");
+				System.out.println("메뉴는 1, 2, QUIT만 입력 가능합니다");
 			}
 		} // end while
-
+		System.out.println("업무 종료!");
 	} // end selectMenu
 
 	@Override
@@ -92,18 +93,29 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 	@Override
 	public String inputName() {
-		System.out.println("학생의 이름을 입력하세요");
-		System.out.print(" >> ");
-		String name = scan.nextLine();
+		while (true) {
 
-		return name;
+			System.out.println("학생의 이름을 입력하세요 ( QUIT : 입력 중단)");
+			System.out.print(" >> ");
+			String name = scan.nextLine();
+
+			if (name.equals("QUIT")) {
+				System.out.println("입력 취소");
+				return null;
+			}
+			return name;
+		}
+
 	}
 
-	private String inputNum() {
-
+	protected String inputNum() {
+		/*
+		 * System.out.println("학번을 입력하세요");
+		 * System.out.print(" >> "); 
+		 * String strNum = scan.nextline();
+		 */
 		Integer intNum = inService.inputValue("학번", 0);
 		String strNum = Integer.toString(intNum);
-		
 		return strNum;
 	}
 
@@ -126,9 +138,8 @@ public class ScoreServiceImplV1 implements ScoreService {
 			System.out.printf("%d\t", scoreVO.getMath());
 			System.out.printf("%d\t", scoreVO.getTotal());
 			System.out.printf("%3.2f\n", scoreVO.getAvg());
-			System.out.println("=".repeat(line));
 		}
-
+		System.out.println("=".repeat(line));
 	}
 
 }
