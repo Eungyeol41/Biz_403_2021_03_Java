@@ -15,3 +15,11 @@
 ## InputServicImplV1
 * since 2021.04
 * InputService interface 구현체
+
+## MenuService
+* since 2021.04
+* 사용자에게 Charactor 메뉴를 보여주고 업무 번호를 입력하면 해당하는 업무 번호를 return하고 QUIT를 입력하면 null을 return
+
+## MenuServiceImpl
+* since 2021.04
+* MenuService interface 구현체
