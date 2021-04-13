@@ -18,6 +18,10 @@ public class MenuServiceImplV1 implements MenuService {
 	/*
 	 * 생성자에서 매개변수 선언
 	 * MenuServiceImplV1 클래스를 사용하여 객체를 생성할 때는 title 변수와 menuList에 값을 담아서 파라메터로 전달하고 생성자를 호출해야 한다.
+	 * 
+	 * new MenuServiceImplV1() 형식으로 작성이 안 된다.
+	 * 반드시 String, List형 두 개의 값을 전달해 주어야 한다.
+	 * new MenuServiceImplV1(title, menuList) 형식으로 작성해야 한다.
 	 */
 	public MenuServiceImplV1(String title, List<String> menuList) {
 		
@@ -44,17 +48,20 @@ public class MenuServiceImplV1 implements MenuService {
 			String strM = scan.nextLine();
 			if (strM.equals("QUIT")) {
 				return null;
-			}
+			} // QUIT 입력 시 업무 종료
+			
 			Integer intM = null;
+			
 			try {
 				intM = Integer.valueOf(strM);
 			} catch (NumberFormatException e) {
 				System.out.printf("업무는 1 ~ %d, 또는 QUIT만 입력하세요", nSize);
-			}
+			} // end try-catch
+			
 			if(intM < 1 || intM > nSize) {
 				System.out.printf("업무는 1 ~ %d, 또는 QUIT만 입력하세요\n", nSize);
 				continue;
-			}
+			} // end if(intM 범위 설정)
 			
 			return intM;
 		}
