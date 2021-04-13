@@ -35,11 +35,11 @@ public class ScoreServiceImplV1Ex extends ScoreServiceImplV1{
 		
 		String title = "대한 고등학교 성적처리 시스템 2021";
 		List<String> menuList = new ArrayList<String>();
-		menuList.add("1. 학생 정보 등록");
-		menuList.add("2. 성적 등록");
-		menuList.add("3. 성적 정보 열기");
-		menuList.add("4. 성적 정보 저장");
-		menuList.add("5. 성적 정보 출력");
+		menuList.add("학생 정보 등록");
+		menuList.add("성적 등록"); // inputScore()
+		menuList.add("성적 정보 열기"); // readScore()
+		menuList.add("성적 정보 저장"); // saveScore()
+		menuList.add("성적 정보 출력"); // printScore()
 		
 		menuService = new MenuServiceImplV1(title, menuList);
 		
@@ -68,10 +68,17 @@ public class ScoreServiceImplV1Ex extends ScoreServiceImplV1{
 			 */
 			if(menu == 1) {
 				// menu가 1일 때
+				
 			} else if(menu == 2) {
 				// menu가 2일 때
+				this.inputScore();
 			} else if(menu == 3) {
 				// menu가 3일 때
+				this.readScore();
+			} else if(menu == 4) {
+				this.saveScore();
+			} else if(menu == 5) {
+				this.printScore();
 			}
 		}
 	}

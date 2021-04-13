@@ -7,62 +7,69 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.Eungyeol41.standard.InputService;
-import com.Eungyeol41.standard.impl.InputServiceImplV1;
 import com.callor.score.model.ScoreVO;
-import com.callor.score.service.ScoreServiceImplV1;
 
-public class ScoreServiceImplV2 extends ScoreServiceImplV1{
+public class ScoreServiceV2Ex extends ScoreServiceImplV1Ex{
 	
-	protected Scanner scan;
 	protected List<ScoreVO> scoreList;
-	InputService inService = new InputServiceImplV1();
+	protected Scanner scan;
+	protected String[] subjectList;
+	protected Integer[] subScoreList;
 	
-	public ScoreServiceImplV2() {
+	protected static final int 국어 = 0;
+	protected static final int 영어 = 1;
+	protected static final int 수학 = 2;
+	
+	
+	public ScoreServiceV2Ex() {
 		scoreList = new ArrayList<ScoreVO>();
+		scan = new Scanner(System.in);
+		subjectList = new String[] {"국어", "영어", "수학"};
+		subScoreList = new Integer[subjectList.length];
 	}
-	
-	public void InputScore() {
+
+	@Override
+	public void inputScore() {
 		
-		while (true) {
-			Integer num = inService.inputValue("학번", 1);
-			if(num == null) {
+		Integer intNum = inService.inputValue("학번", 1);
+		if(intNum == null) {
+			return;
+		}
+		String strNum = String.format("%03d", intNum);
+		
+		String strName = null;
+		while(true) {
+			System.out.println(strNum + "번 학생의 이름 ( QUIT : 중단 ) ");
+			System.out.print(" >> ");
+			strName = scan.nextLine();
+			if(strName == "QUIT") {
 				return;
 			}
-			String strNum = String.format("%03d", num); // end num
-			
-			System.out.println(num + " 학생의 이름 ( QUIT : 입력 중단 )");
-			System.out.print(" >> ");
-			String name = scan.nextLine();
-			if(name.equals("QUIT")) {
-				break;
-			} // end name
-			
-			
-			Integer kor = inService.inputValue("국어", 0, 100);
-			if (kor == null) {
-				return;
-			} // end kor
-			Integer eng = inService.inputValue("영어", 0, 100);
-			if (eng == null) {
-				return;
-			} // end eng
-			Integer math = inService.inputValue("수학", 0, 100);
-			if (math == null) {
-				return;
-			} // end math 
-			
-			ScoreVO vo = new ScoreVO();
-			vo.setNum(strNum);
-			vo.setName(name);
-			vo.setKor(kor);
-			vo.setEng(eng);
-			vo.setMath(math);
-			scoreList.add(vo);
-			
+			if(strNum == "") {
+				System.out.println("학생 이름은 필수 항목!!");
+				continue;
+			}
+			break;
 		}
+		
+		for(int i = 0; i < subjectList.length; i++) {
+			String subject = subjectList[i] + " 점수";
+			Integer intScore = inService.inputValue(subject, 0, 100);
+			if(intScore == null) {
+				return;
+			}
+			subScoreList[i] = intScore;
+		}
+		
+		ScoreVO scoreVO = new ScoreVO();
+		scoreVO.setNum(strNum);
+		scoreVO.setName(strName);
+		scoreVO.setKor(subScoreList[국어]);
+		scoreVO.setEng(subScoreList[영어]);
+		scoreVO.setMath(subScoreList[수학]);
+		scoreList.add(scoreVO);
 	}
-	
+
 	@Override
 	public void printScore() {
 		System.out.println("=".repeat(80));
@@ -81,7 +88,7 @@ public class ScoreServiceImplV2 extends ScoreServiceImplV1{
 			System.out.print(vo.getAvg() + "\n");
 		}
 	}
-	
+
 	@Override
 	public void saveScore() {
 		
@@ -125,6 +132,13 @@ public class ScoreServiceImplV2 extends ScoreServiceImplV1{
 			// e.printStackTrace();
 			System.out.println("파일을 저장할 수 없습니다.");
 		}
-	
+		
+		
+		
 	}
+	
+	
+	
+	
+
 }
