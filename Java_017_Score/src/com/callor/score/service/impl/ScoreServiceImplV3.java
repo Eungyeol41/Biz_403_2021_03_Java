@@ -28,6 +28,11 @@ public class ScoreServiceImplV3 extends ScoreServiceImplV2 {
 		FileReader fileReader = null;
 		BufferedReader buffer = null;
 		
+		/*
+		 * list에 있는 removeAll method는 2개의 list에 중복된 데이터가 있으면 중복된 데이터를 삭제하는 method
+		 */
+		scoreList.removeAll(scoreList);
+		
 		try {
 			fileReader = new FileReader(readFile);
 			buffer = new BufferedReader(fileReader);
