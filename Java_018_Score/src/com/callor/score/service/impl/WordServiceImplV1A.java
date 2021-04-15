@@ -48,7 +48,7 @@ public class WordServiceImplV1A implements WordService{
 				wordVO.setEnglish(words[0]);
 				wordVO.setKorea(words[1]);
 				wordList.add(wordVO);
-			}
+			} // end while
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace();
