@@ -93,7 +93,25 @@ public class StudentServiceImplV1A implements StudentService {
 
 	@Override
 	public StudentVO getStudent(String num) {
-		// TODO Auto-generated method stub
+		// TODO 학번으로 학생 조회하여 학생정보 return
+		
+		// 1번 코드
+		int nSize = studentList.size();
+		for(int i = 0; i < nSize; i++) {
+			
+			// StudentVO vo = null;
+			// vo = studentList.get(i);
+			StudentVO vo = studentList.get(i);
+			if(vo.getNum().equals(num)) {
+				return vo;
+			}
+		} // end for
+
+		// 2번 코드
+		// 새로운 for, forEach
+		for(StudentVO vo : studentList) {
+			if(vo.getNum().equals(num)) return vo;
+		} // end for2
 		return null;
 	}
 

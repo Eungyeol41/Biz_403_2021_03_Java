@@ -1,9 +1,10 @@
-package com.callor.score.service;
+package com.callor.score.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.Eungyeol41.standard.MenuService;
 import com.Eungyeol41.standard.impl.MenuServiceImplV1;
+import com.callor.score.service.ScoreService;
 
 public class ScoreServiceImplV1 implements ScoreService {
 	

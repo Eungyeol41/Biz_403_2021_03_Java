@@ -70,7 +70,8 @@ public class StudentServiceImplV1 implements StudentService{
 
 	@Override
 	public StudentVO getStudent(String num) {
-		// TODO Auto-generated method stub
+		// TODO 학번으로 학생 조회하여 학생정보 return
+		
 		StudentVO student = this.getStudent(num);
 		
 		for(int i = 0; i < studentList.size(); i++) {

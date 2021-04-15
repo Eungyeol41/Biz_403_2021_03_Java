@@ -10,7 +10,6 @@ import java.util.Scanner;
 import com.Eungyeol41.standard.InputService;
 import com.Eungyeol41.standard.impl.InputServiceImplV1;
 import com.callor.score.model.ScoreVO;
-import com.callor.score.service.ScoreServiceImplV1;
 
 public class ScoreServiceImplV2 extends ScoreServiceImplV1{
 	

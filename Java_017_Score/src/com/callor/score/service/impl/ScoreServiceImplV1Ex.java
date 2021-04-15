@@ -7,7 +7,6 @@ import com.Eungyeol41.standard.InputService;
 import com.Eungyeol41.standard.MenuService;
 import com.Eungyeol41.standard.impl.InputServiceImplV1;
 import com.Eungyeol41.standard.impl.MenuServiceImplV1;
-import com.callor.score.service.ScoreServiceImplV1;
 
 public class ScoreServiceImplV1Ex extends ScoreServiceImplV1{
 	

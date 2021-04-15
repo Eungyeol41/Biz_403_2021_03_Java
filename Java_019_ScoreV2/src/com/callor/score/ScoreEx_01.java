@@ -8,6 +8,6 @@ public class ScoreEx_01 {
 	public static void main(String[] args) {
 		
 		ScoreService sService = new ScoreServiceImplV1();
-		sService.selectMenu();
+		sService.printScore();
 	}
 }
