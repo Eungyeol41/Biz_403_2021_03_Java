@@ -17,8 +17,8 @@ public class WordServiceImplV1A implements WordService{
 	protected final int 영어 = 0;
 	protected final int 한글 = 1;
 	protected Scanner scan;
-	
 	protected List<WordVO> wordList;
+	
 	public WordServiceImplV1A() {
 		wordList = new ArrayList<WordVO>();
 		scan = new Scanner(System.in);
