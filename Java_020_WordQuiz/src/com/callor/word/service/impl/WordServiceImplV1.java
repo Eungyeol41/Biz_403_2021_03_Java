@@ -14,8 +14,9 @@ import com.Eungyeol41.standard.InputService;
 import com.Eungyeol41.standard.MenuService;
 import com.Eungyeol41.standard.impl.InputServiceImplV1;
 import com.callor.word.domain.WordVO;
+import com.callor.word.service.WordService;
 
-public class WordServiceImplV1 {
+public class WordServiceImplV1 implements WordService{
 
 	protected InputService inService;
 	protected MenuService mService;
@@ -31,18 +32,16 @@ public class WordServiceImplV1 {
 
 	// word.txt 파일을 기본으로 하여 객체 생성을 하기 위한 생성자
 	public WordServiceImplV1() {
-		// TODO Auto-generated constructor stub
 		this("src/com/callor/word/word.txt");
 	}
 
 	// 객체를 생성할 때 파일이름을 전달하여 word 파일을 지정하기
 	public WordServiceImplV1(String wordFile) {
-		// TODO Auto-generated constructor stub
 		inService = new InputServiceImplV1();
-//		mService = new MenuServiceImplV1(title, null);
 		scan = new Scanner(System.in);
-		wordList = new ArrayList<WordVO>();
 		rnd = new Random();
+		
+		wordList = new ArrayList<WordVO>();
 		this.loadWords(wordFile);
 
 		// nWordCount는 wordList의 size를 담고있을 변수 만들기
@@ -91,7 +90,7 @@ public class WordServiceImplV1 {
 
 		// wordList의 개수(size)를 담을 변수를 2개의 method에서 사용을 하고 있다.
 		// 이 변수의 필드영역으로 보내자.
-		int nWordCount = wordList.size(); // 단어의 개수....?
+		// int nWordCount = wordList.size(); // 단어의 개수....?
 
 		// 0 ~ (WordList.size() -1) 범위의 임의의 정수 만들기
 		int nWordIndex = rnd.nextInt(nWordCount);
@@ -105,7 +104,7 @@ public class WordServiceImplV1 {
 		return shuffleEnglish;
 	}
 
-	private void inputWord(String[] viewWord) {
+	protected String inputWord(String[] viewWord) {
 		
 		System.out.println("=".repeat(50));
 		System.out.println("뤼팡의 영단어 게임 V1");
@@ -116,21 +115,19 @@ public class WordServiceImplV1 {
 		// shuffle된 영단어를 보여주기
 		// this.startGame();
 		System.out.println(Arrays.toString(viewWord));
-		
 		System.out.print(" >> ");
 		String strInput = scan.nextLine();
 		
-		
-		
+		return strInput;
 	}
 	
 	/*
 	 * 영문단어를 매개변수로 받아서 알파벳 단위로 자르고 뒤섞어 배열로 만든 후 return
 	 */
-	private String[] shuffleWord(String strEnglish) {
+	protected String[] shuffleWord(String strEnglish) {
 
 		// 영문 단어를 스펠링 단위로 잘라서 배열로 생성
-		String[] shuffleEnglish = strEnglish.split("");
+		String shuffleEnglish[] = strEnglish.split("");
 
 		int nCount = shuffleEnglish.length;
 		// 몇 번 섞을래? (1,000번 섞기)
@@ -149,7 +146,7 @@ public class WordServiceImplV1 {
 		return shuffleEnglish;
 	}
 
-	private void loadWords(String wordFile) {
+	protected void loadWords(String wordFile) {
 		// TODO word.txt 파일을 읽어 wordList 만들어두기
 		FileReader fileReader = null;
 		BufferedReader buffer = null;
@@ -160,8 +157,7 @@ public class WordServiceImplV1 {
 			while (true) {
 
 				String reader = buffer.readLine();
-				if (reader == null)
-					break;
+				if (reader == null) break;
 				String words[] = reader.split(":");
 
 				WordVO wordVO = new WordVO();
@@ -171,6 +167,7 @@ public class WordServiceImplV1 {
 			}
 			// 여기에서 wordList size를 계산하여 nWordCount 변수에 담을수도 있지만 복잡한 코드 속에 있는 관계로 코드가 세팅되는 것을
 			// 보기가 다소 불편하여 생성자 부분으로 이동하였다.
+			// nWordCount = wordList.size();
 
 			buffer.close();
 		} catch (FileNotFoundException e) {
