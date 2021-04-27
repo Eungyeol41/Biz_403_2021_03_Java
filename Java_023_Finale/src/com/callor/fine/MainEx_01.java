@@ -42,13 +42,6 @@ public class MainEx_01 {
 			intSum += i;
 		}
 		System.out.println("1 ~ 100까지의 덧셈 결과" + intSum);
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 }

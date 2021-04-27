@@ -22,12 +22,12 @@ public class MainEx_05 {
 					break;
 				}
 			}
-			if(nums[i] < index) {
+			if(index < nums[i]) {
 				System.out.println();
 			} else {
 				System.out.println();
 			}
-		// nums와 index 순서
+		// nums[i]와 index 순서
 		}
 	}
 }

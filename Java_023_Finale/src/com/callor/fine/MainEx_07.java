@@ -18,4 +18,37 @@ public class MainEx_07 {
 	 * =====================================
 	 */
 	
+	public static void main(String[] args) {
+		
+		int intDan = 5;
+		int intNum = 1;
+		
+		System.out.println("=====================");
+		System.out.printf("%d 구구단\n", intDan);
+		System.out.println("--------------------");
+		
+		intNum ++;
+		System.out.printf("%d x %d = %d\n", intDan, intNum, intDan * intNum);
+		
+		System.out.println("========================================================");
+		
+		
+		System.out.println("5단 구구단");
+		for(int i = 1; i < 10; i++) {
+			System.out.printf("%d x %d = %d\n", 5, i, 5 * i);
+		}
+		
+		System.out.println("==-=-=-=-=--=-=-=-==");
+		int dan = 5;
+		System.out.println(dan + "단 구구단");
+		for(int i = 1; i < 10; i++) {
+			System.out.printf("%d x %d = %d\n", dan, i, dan*i);
+		}
+		
+	}
+	
+		
+		
+	
+
 }
